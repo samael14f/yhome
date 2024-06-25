@@ -1,9 +1,9 @@
 'use client'
 
-import { useState } from "react"
 
 import { usePathname,useRouter } from "next/navigation"
 import Link from "next/link";
+import { log } from "console";
 
 
 
@@ -35,26 +35,19 @@ const MenuItems = () =>{
     },
 
     ]
-    const router = useRouter();
     
-    const handleClick = (link:string) =>{
-        
-        router.push(`${link}`);
-        
-    }
    
     return(
         <ul className=" flex flex-col gap-2 w-full items-center mt-1 justify-center ">
                         {menuItems.map( item =>{
                                 const link = item.link;
                                 return (
-                                
-                                    <Link href={item.link}>
-                                        <li key={item.name} className = {`px-5 py-4 cursor-pointer hover:bg-gray-100 transition w-full ${pathname === item.link ? 'text-airbnb' : '' } ` }
-                                    >{item.name}</li>
+                                <li key={item.name} className = {`px-5 py-4 cursor-pointer hover:bg-gray-100 transition w-full ${pathname === item.link ? 'text-airbnb' : '' } ` }
+                                 >
+                                    <Link href={item.link}>{item.name}
                                     
                                     </Link>
-                                
+                                </li>
                             )}
                         )}
         </ul>
