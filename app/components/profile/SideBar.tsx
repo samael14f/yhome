@@ -8,7 +8,7 @@ const SideBar = async() =>{
     const landlord = await apiService.get(`/api/auth/${userId}`)
 
     return(
-        <aside className="col-span-1 mb-4 border border-gray-300 h-full rounded-lg ">
+        <aside className="col-span-1 mb-4 border border-gray-300  rounded-lg ">
                     <div className="flex flex-col items-center p-6 rounded-xl  ">
                         <Image
                             src={landlord.avatar_url}

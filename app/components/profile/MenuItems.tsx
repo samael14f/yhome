@@ -1,7 +1,7 @@
-'use client'
 
 
-import { usePathname,useRouter } from "next/navigation"
+
+// import { usePathname,useRouter } from "next/navigation"
 import Link from "next/link";
 import { log } from "console";
 
@@ -10,24 +10,16 @@ import { log } from "console";
 const MenuItems = () =>{
 
     
-    const pathname = usePathname();
-    console.log(pathname)
+    // const pathname = usePathname();
+    // console.log(pathname)
     const menuItems = [
-    {
-        name : 'my Details',
-        link : 'myprofile/details'
-        
-    },
+   
     {
         name : 'my Properties',
         link : 'myprofile/properties',
         
     },
-    {
-        name : 'my Guests',
-        link : 'myprofile/guests',
-        
-    },
+   
     {
         name : 'edit Profile',
         link : 'myprofile/edit-profile',
@@ -42,7 +34,7 @@ const MenuItems = () =>{
                         {menuItems.map( item =>{
                                 const link = item.link;
                                 return (
-                                <li key={item.name} className = {`px-5 py-4 cursor-pointer hover:bg-gray-100 transition w-full ${pathname === item.link ? 'text-airbnb' : '' } ` }
+                                <li key={item.name} className = {`px-5 py-4 cursor-pointer hover:bg-gray-100 transition w-full  ` }
                                  >
                                     <Link href={item.link}>{item.name}
                                     
