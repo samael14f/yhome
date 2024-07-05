@@ -5,10 +5,15 @@ import SearchFilters from './SearchFilters';
 import UserNav from './UserNav';
 import { getUserId } from '@/app/lib/actions';
 import AddPropertyButton from './AddPropertyButton';
+import apiService from "@/app/services/apiService";
 
 const Navbar = async () => {
     const userId = await getUserId();
-
+    let isSuperUser = null;
+    if (userId != null){
+    const user = await apiService.get(`/api/auth/${userId}/`);
+    isSuperUser = user.is_superuser;
+    }
     console.log('userId:', userId);
 
     return (
@@ -35,6 +40,7 @@ const Navbar = async () => {
 
                         <UserNav 
                             userId={userId}
+                            isSuperUser={isSuperUser}
                         />
                     </div>
                 </div>

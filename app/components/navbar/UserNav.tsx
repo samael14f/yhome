@@ -11,10 +11,11 @@ import useSignupModal from "@/app/hooks/useSignupModal";
 
 interface UserNavProps {
     userId?: string | null;
+    isSuperUser?: boolean | null;
 }
 
 const UserNav: React.FC<UserNavProps> = ({
-    userId
+    userId,isSuperUser
 }) => {
     const router = useRouter();
     const loginModal = useLoginModal();
@@ -74,16 +75,30 @@ const UserNav: React.FC<UserNavProps> = ({
                                 }}
                             />
 
-                            <MenuLink
-                                label='My profile'
-                                onClick={() => {
-                                    setIsOpen(false);
-                                    router.push('/myprofile');
+                       <MenuLink
+                          label='My profile'
+                       onClick={() => {
+                               setIsOpen(false);
+                    router.push('/myprofile');
                                 }}
                             />
-
-                            <LogoutButton />
-                        </>
+                            
+                      { isSuperUser ?
+                      
+                        <MenuLink 
+                          label='Admin-Dashboard'
+                          onClick={() =>{
+                            setIsOpen(false);
+                            router.push('/admin');
+                          }}
+                         />:<></>
+                         }
+                         
+                    
+                        <LogoutButton />
+                        
+                    
+                    </>
                     ) : (
                         <>
                             <MenuLink 

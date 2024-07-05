@@ -6,7 +6,7 @@ import SideBar from '../components/profile/SideBar'
 
 
 
-const MyProfile = async () =>{
+const MyProfile =  () =>{
     
     return (
         <div>

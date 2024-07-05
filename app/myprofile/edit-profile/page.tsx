@@ -5,7 +5,7 @@ import apiService from "@/app/services/apiService";
 import { useState,ChangeEvent } from "react";
 
 const EditProfile = async() =>{
-    const [dataName,setDataName] = useState('');
+   /* const [dataName,setDataName] = useState('');
     const [dataImage,setDataImage] = useState<File | null>(null);
     const userId = getUserId(); 
     
@@ -19,7 +19,7 @@ const EditProfile = async() =>{
         }
     }
 
-    const submitForm = async() =>{
+   /* const submitForm = async() =>{
         if (dataName && dataImage){
             const form = new FormData()
             form.append('name',dataName);
@@ -28,11 +28,11 @@ const EditProfile = async() =>{
             // const response = await apiService.patch()
 
         }
-    }
+    }*/
 
     return (
         <div>
-            
+            edit
         </div>
     )
 };
