@@ -4,6 +4,8 @@ import { useState,useEffect} from 'react'
 import { getUserId } from '@/app/lib/actions'
 import apiService from '@/app/services/apiService'
 
+import Reservation from './Reservation'
+
 
 export type PropertyType = {
     id: string;
@@ -12,7 +14,7 @@ export type PropertyType = {
     price_per_night: number;
    
 }
-const Users = () =>{
+const Reservations = () =>{
     
   const [reservations, setReservations] = useState([])
   const getData = async () =>{
@@ -35,7 +37,7 @@ const Users = () =>{
           reservations.map((reservation)=>{
             return(
               <div>
-                { reservation.id }
+              <Reservation  reservation = { reservation } />
               </div>
               
               )
@@ -49,4 +51,4 @@ const Users = () =>{
   
 }
 
-export default Users;
+export default Reservations;
