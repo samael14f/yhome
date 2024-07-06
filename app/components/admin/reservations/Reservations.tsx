@@ -32,11 +32,13 @@ const Reservations = () =>{
   
   return(
     
-    <div>
+    <div className="p-4">
+     <h1 className="text-xl text-gray-600 font-semibold my-4 ">Reservations</h1>
         {
           reservations.map((reservation)=>{
             return(
-              <div>
+              <div >
+              
               <Reservation  reservation = { reservation } />
               </div>
               

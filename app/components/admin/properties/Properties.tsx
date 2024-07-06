@@ -27,11 +27,13 @@ const Properties = () =>{
   
   return(
     
-    <div>
+    <div className="p-4">
+      <h1 className="text-xl text-gray-600 font-semibold my-4 ">Properties</h1>
        {
          properties.map((property)=>{
            return(
-             <div>
+             <div >
+            
               <PropertyItem  
               property = {  property }
               />

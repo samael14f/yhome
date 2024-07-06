@@ -21,6 +21,7 @@ const AdminDasboard =  () =>{
       <>
         
       <div className = "flex flex-col space-y-10 divide-y divide-gray-300 " >
+      
       <Users />
       
       <Properties />

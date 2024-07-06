@@ -41,8 +41,24 @@ const Property = async ({params}: { params: {id: string }}) =>{
                     </p>
                 </div>
 
+       
              
             </div>
+         <div className="flex items-center p-2 space-x-8 ">
+         <Link href={`/admin/edit-property/${property.id}`}>
+          <p className="bg-slate-700 text-gray-50 text-center w-fit px-4 py-2 rounded-md ">
+            Edit Property
+          </p>
+          </Link>
+          
+         <Link href={`/admin/delete-property/${property.id}`}>
+          <p className="bg-red-500 text-gray-50 text-center w-fit px-4 py-2 rounded-md ">
+            Delete Property
+          </p>
+          </Link>
+          
+          
+          </div>
         </main>
     )
 }

@@ -6,7 +6,7 @@ import Image from 'next/image'
 import { useRouter } from 'next/navigation';
 
 
-const EditUser = ({params}:{params:{id:string}}) =>{
+const EditProfile = ({params}:{params:{id:string}}) =>{
   const [dataName,setDataName] = useState('');
   const [dataImage, setDataImage] = useState<File | null>(null);
   
@@ -28,13 +28,13 @@ const EditUser = ({params}:{params:{id:string}}) =>{
       const formData = new FormData();
       formData.append('name',dataName);
       formData.append('avatar',dataImage);
-      const response = await apiService.post(`/api/admin/edit-user/${params.id}`,formData)
+      const response = await apiService.post(`/api/auth/edit-user/${params.id}`,formData)
       
       
       if (response.success) {
                 console.log('SUCCESS :-D');
 
-                router.push(`/admin/user/${params.id}`);
+                router.push(`/myprofile`);
 
                
             } else {
@@ -90,4 +90,4 @@ const EditUser = ({params}:{params:{id:string}}) =>{
     )
 }
 
-export default EditUser;
+export default EditProfile;

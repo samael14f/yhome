@@ -86,7 +86,7 @@ const UserNav: React.FC<UserNavProps> = ({
                       { isSuperUser ?
                       
                         <MenuLink 
-                          label='Admin-Dashboard'
+                          label='Dashboard ✨'
                           onClick={() =>{
                             setIsOpen(false);
                             router.push('/admin');

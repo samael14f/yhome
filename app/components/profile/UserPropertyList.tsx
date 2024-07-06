@@ -30,7 +30,7 @@ const UserPropertyList = async({id}) =>{
       ):(
       <div>
         
-        No Properties owned
+        ghello 
 
         
       </div>

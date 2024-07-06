@@ -28,7 +28,7 @@ const UserReservationList = async ({id}) =>{
       ):(
       <div>
         
-        
+        No Reservations
 
         
       </div>
