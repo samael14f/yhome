@@ -28,7 +28,8 @@ const AddPropertyModal = () => {
     const [dataGuests, setDataGuests] = useState('');
     const [dataCountry, setDataCountry] = useState<SelectCountryValue>();
     const [dataImage, setDataImage] = useState<File | null>(null);
-
+    const [dataLicense, setDataLicense] = useState<File | null>(null);
+    const [dataAddress,setDataAddress] = useState('');
     //
     //
 
@@ -50,6 +51,13 @@ const AddPropertyModal = () => {
         }
     }
 
+
+    const setLicense = (event:ChangeEvent<HTMLInputElement>) =>{
+      if (event.target.files && event.target.files.length > 0){
+        const tmpLicense = event.target.files[0];
+        setDataLicense(tmpLicense);
+      }
+    }
     //
     // SUbmit
 
@@ -75,7 +83,9 @@ const AddPropertyModal = () => {
             formData.append('country', dataCountry.label);
             formData.append('country_code', dataCountry.value);
             formData.append('image', dataImage);
-
+            formData.append('license',dataLicense)
+            formData.append('address', dataAddress)
+            
             const response = await apiService.post('/api/properties/create/', formData);
 
             if (response.success) {
@@ -218,7 +228,16 @@ const AddPropertyModal = () => {
                             onChange={(value) => setDataCountry(value as SelectCountryValue)}
                         />
                     </div>
-
+                    
+                  <div className='flex flex-col space-y-2 mb-2'>
+                    <label>Address</label>
+                        <textarea
+                          value={dataAddress}
+                          onChange={(e) => setDataAddress(e.target.value)}
+                        className='w-full h-[200px] p-4 border border-gray-600 rounded-xl'></textarea>
+                  </div>
+                  {dataAddress}
+                  
                     <CustomButton
                         label='Previous'
                         className='mb-2 bg-black hover:bg-gray-800'
@@ -253,6 +272,17 @@ const AddPropertyModal = () => {
                                 />
                             </div>
                         )}
+                        <h2 className='mb-2 text-2xl'>License</h2>
+                         <div className='py-4 px-6 bg-gray-600 text-white rounded-xl mb-2'>
+                          <input
+                              type="file"
+                              accept='.pdf,.doc'
+                              onChange={setLicense}
+                            />
+                        </div>
+                        { dataLicense && (URL.createObjectURL(dataLicense)) }
+                       
+                        
                     </div>
 
                     {errors.map((error, index) => {

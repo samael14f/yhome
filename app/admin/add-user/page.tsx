@@ -43,8 +43,8 @@ const AddUser = () =>{const router = useRouter();
   
   return (
     
-    <div>
-      
+    <div className="p-3 ">
+      <h1 className="text-xl text-gray-600 font-bold">Add Users </h1>
       
       <div className="flex flex-col items-center
       px-8 py-4 space-y-6 ">

@@ -12,10 +12,11 @@ import useSignupModal from "@/app/hooks/useSignupModal";
 interface UserNavProps {
     userId?: string | null;
     isSuperUser?: boolean | null;
+    isStaff?: boolean | null;
 }
 
 const UserNav: React.FC<UserNavProps> = ({
-    userId,isSuperUser
+    userId,isSuperUser,isStaff
 }) => {
     const router = useRouter();
     const loginModal = useLoginModal();
@@ -94,6 +95,16 @@ const UserNav: React.FC<UserNavProps> = ({
                          />:<></>
                          }
                          
+                       { !isSuperUser && isStaff?
+                      
+                        <MenuLink 
+                          label='Dashboard 🔷'
+                          onClick={() =>{
+                            setIsOpen(false);
+                            router.push('/staff');
+                          }}
+                         />:<></>
+                         }
                     
                         <LogoutButton />
                         

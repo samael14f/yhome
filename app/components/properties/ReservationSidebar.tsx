@@ -3,6 +3,7 @@
 import {useState, useEffect} from 'react';
 import {Range} from 'react-date-range';
 import { differenceInDays, eachDayOfInterval, format} from 'date-fns';
+import {useRouter} from 'next/navigation';
 import DatePicker from '../forms/Calendar';
 import apiService from '@/app/services/apiService';
 import useLoginModal from '@/app/hooks/useLoginModal';
@@ -31,6 +32,7 @@ const ReservationSidebar: React.FC<ReservationSidebarProps> = ({
     property,
     userId
 }) => {
+    const router = useRouter()
     const loginModal = useLoginModal();
     const showMessage  = useShowMessage();
     const [fee, setFee] = useState<number>(0);
@@ -58,20 +60,11 @@ const ReservationSidebar: React.FC<ReservationSidebarProps> = ({
 
                 if (response.success) {
                     console.log('Bookin successful');
-                    <ShowMessageModal
-                        message={"Reservation successful"}
-                        label={'Yhome Welcomes you'}
-                        link={'myreservations'}
-                         />
-                        showMessage.open(); 
+                        router.push(`/myreservations`)
                            
                 } else {
                     console.log('Something went wrong...');
-                    <ShowMessageModal
-                        message={"Oops something went wrong"}
-                        label={'Yhome Welcomes you'}
-                        link={'properties'}
-                         />
+
                     showMessage.open();     
                 }
                 

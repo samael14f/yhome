@@ -10,27 +10,25 @@ import Properties from '@/app/components/admin/properties/Properties'
 
 const AdminDasboard =  () =>{
   
-
-  
-  
-  
-  
-  
+  //
   
   return (
       <>
-        
+     
       <div className = "flex flex-col space-y-10 divide-y divide-gray-300 " >
       
-      <Users />
+      
+       <Users url='/api/admin' name='Users' addLink = '/admin/add-user/' />
       
       <Properties />
       
       <Reservations />
       
-      
+
       </div>
 
+        
+ 
         
       </>
     )

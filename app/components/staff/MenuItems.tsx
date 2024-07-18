@@ -17,29 +17,25 @@ const MenuItems = () =>{
       
       {
         name : 'Users',
-        link : '/admin/users',
+        link : '/staff/users',
       },
-      {
-        name : 'Staffs',
-        link : '/admin/staffs',
-      },
+  
       {
         name: 'Properties',
-        link: '/admin/properties',
-      },
-      {
-        name: 'Requests',
-        link: '/admin/requests',
-      },
-      {
-        name: 'Complaints',
-        link: '/admin/complaints'
+        link: '/staff/properties',
       },
       {
         name: 'Reservations',
-        link: '/admin/reservations',
+        link: '/staff/reservations',
       },
-      
+      {
+        name: 'Request',
+        link: '/staff/requests'
+      },
+      {
+        name: 'Complaints',
+        link: '/staff/complaints'
+      }
       
       ]
       

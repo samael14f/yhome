@@ -10,9 +10,11 @@ import apiService from "@/app/services/apiService";
 const Navbar = async () => {
     const userId = await getUserId();
     let isSuperUser = null;
+    let isStaff = null;
     if (userId != null){
     const user = await apiService.get(`/api/auth/${userId}/`);
     isSuperUser = user.is_superuser;
+    isStaff = user.is_staff;
     }
     console.log('userId:', userId);
 
@@ -41,6 +43,7 @@ const Navbar = async () => {
                         <UserNav 
                             userId={userId}
                             isSuperUser={isSuperUser}
+                            isStaff={isStaff}
                         />
                     </div>
                 </div>

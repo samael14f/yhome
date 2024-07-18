@@ -6,7 +6,7 @@ const UsersAdmin = () =>{
   return (
       <div>
       
-        <Users />
+        <Users url='/api/admin' name='Users' addLink = '/admin/add-user/' />
       
       </div>
     )

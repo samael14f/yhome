@@ -39,9 +39,16 @@ const Property = async ({params}: { params: {id: string }}) =>{
                     <p className="mt-6 text-lg">
                         {property.description}
                     </p>
+                    
                 </div>
-
-       
+          
+            <div className="py-6">
+                <h1 className="text-xl text-gray-800 font-bold">Location </h1>
+                <p className="text-lg text-gray-600">{property?.country}</p>
+                <p className="text-lg text-gray-600">{property?.address}</p>
+                
+                
+            </div>
              
             </div>
          <div className="flex items-center p-2 space-x-8 ">

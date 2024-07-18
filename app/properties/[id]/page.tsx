@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import ReservationSidebar from "@/app/components/properties/ReservationSidebar";
-
+import Reviews from "@/app/components/reservation/Reviews"
 import apiService from "@/app/services/apiService";
 import { getUserId } from "@/app/lib/actions";
 
@@ -13,7 +13,7 @@ const PropertyDetailPage = async ({params}: { params: {id: string }}) => {
 
     return (
         <main className="max-w-[1500px] mx-auto px-6 pb-6">
-            <div className="w-full h-[64vh] mb-4 overflow-hidden rounded-xl relative">
+            <div className="w-full h-[40vh] mb-4 overflow-hidden rounded-xl relative">
                 <Image
                     fill
                     src={property.image_url}
@@ -54,6 +54,9 @@ const PropertyDetailPage = async ({params}: { params: {id: string }}) => {
                     <p className="mt-6 text-lg">
                         {property.description}
                     </p>
+                    
+                    <Reviews id = {property.id}/>
+                    
                 </div>
 
                 <ReservationSidebar 

@@ -23,7 +23,16 @@ const UserCard:React.FC<UserType> = ({user}) =>{
          <div className=" p-1 bg-green-500 border border-green-200 text-green-500 font-semibold text-sm rounded-full w-2  ">
             
          </div>
-      ):(
+      ):
+      user.is_staff?(
+        <div className=" p-1 bg-blue-500 border border-blue-200 text-blue-500 font-semibold text-sm rounded-full w-2  ">
+            
+         </div>
+      
+      ):
+      
+      
+      (
         <div className=" p-1 bg-red-500 border border-red-200 text-red-500 font-semibold text-sm rounded-full w-2">
             
          </div>

@@ -3,7 +3,7 @@ import apiService from '@/app/services/apiService'
 import MenuItems from './MenuItems'
 import Link from 'next/link'
 
-const AdminSideBar = async() =>{
+const StaffSideBar = async() =>{
   const userId = await getUserId();
   const user = await apiService.get(`/api/auth/${userId}`);
   
@@ -13,8 +13,11 @@ const AdminSideBar = async() =>{
            <div className="flex flex-col items-center p-6 rounded-xl  ">
 
 
-              <Link href="/admin"><h1 className="mt-6 text-2xl">{user.name}</h1>
+              <Link href="/admin"><h1 className="mt-6 text-s">
+              {user.name?(user.name):(user.email)}</h1>
                </Link>
+               <p className="text-base text-gray-600 font-semibold text-center">
+               (Staff)</p>
                         
            </div>
            <hr />
@@ -26,4 +29,4 @@ const AdminSideBar = async() =>{
     )
 };
 
-export default AdminSideBar;
+export default StaffSideBar;
