@@ -31,9 +31,7 @@ const Payment = (id:string, amount:string)=>{
     "image": "/logo.jpg",
     //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
     "handler": async function (response){
-        alert(response.razorpay_payment_id);
-        alert(response.razorpay_order_id);
-        alert(response.razorpay_signature);
+        
         const payment_data={
           razorpay_payment_id:response.razorpay_payment_id,
           razorpay_order_id:response.razorpay_order_id,
@@ -47,8 +45,8 @@ const Payment = (id:string, amount:string)=>{
         
     },
     "prefill": {
-        "name": "Gaurav Kumar",
-        "email": "gaurav.kumar@example.com",
+        "name": "yhome user",
+        "email": "yhome@example.com",
         "contact": "9000090000"
     },
     "notes": {

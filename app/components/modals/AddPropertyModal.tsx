@@ -236,7 +236,7 @@ const AddPropertyModal = () => {
                           onChange={(e) => setDataAddress(e.target.value)}
                         className='w-full h-[200px] p-4 border border-gray-600 rounded-xl'></textarea>
                   </div>
-                  {dataAddress}
+                
                   
                     <CustomButton
                         label='Previous'
@@ -280,7 +280,7 @@ const AddPropertyModal = () => {
                               onChange={setLicense}
                             />
                         </div>
-                        { dataLicense && (URL.createObjectURL(dataLicense)) }
+                      
                        
                         
                     </div>
