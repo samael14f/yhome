@@ -54,6 +54,21 @@ const Reservation = async ({params}:{params:{id:string}}) =>{
             <p className="text-base text-gray-600 font-semibold ">Nights {reservation.number_of_nights}</p>
             <p className="text-base text-gray-600 font-semibold ">Guests {reservation.guests}</p>
             <p className="text-lg text-gray-800 font-bold ">Total {reservation.total_price}$</p>
+            {
+              reservation.paid_status?
+              (
+              <div className="text-2xl font-bold text-green-500 border border-2 border-green-400 text-center p-4 rounded-full my-4 w-[50%] aspect-1">
+                Paid
+              </div>
+              
+              ):
+              (
+              <div className="text-2xl font-bold text-gray-500 border border-2 border-gray-400 text-center p-4 rounded-full my-4 w-[50%] aspect-1">
+                Not yet paid
+              </div>
+              
+              )
+            }
           </div>
             
             
