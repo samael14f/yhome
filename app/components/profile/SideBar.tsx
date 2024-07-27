@@ -24,7 +24,7 @@ const SideBar = async() =>{
            </div>
            <hr />
                     
-          <MenuItems />
+          <MenuItems id = {userId} />
                     
         </aside>
     )

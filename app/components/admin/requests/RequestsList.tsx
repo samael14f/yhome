@@ -7,10 +7,10 @@ import Image from 'next/image'
 
 
 
-const RequestsList = async () =>{
+const RequestsList = async ({url}) =>{
   
-    
-     const requestsList = await apiService.get(`/api/admin/get-requests-list`);
+  
+  const requestsList = await apiService.get(url);
 
   return (
     

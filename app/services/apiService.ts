@@ -37,7 +37,8 @@ const apiService = {
                 method: 'POST',
                 body: data,
                 headers: {
-                    'Authorization': `Bearer ${token}`
+                    'Authorization': `Bearer ${token}`,
+                    
                 }
             })
                 .then(response => response.json())

@@ -61,7 +61,7 @@ const EditUser = ({params}:{params:{id:string}}) =>{
              
              />
         </div>
-        <p>{dataName}</p>
+       
         <div className=" w-full flex flex-col space-y-4">
         <label className="text-xl">Image </label>
              <div className='py-4 px-4 bg-gray-600 text-white rounded-xl w-[50%]'>

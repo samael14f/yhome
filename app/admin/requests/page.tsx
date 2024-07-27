@@ -8,7 +8,7 @@ const Requests = () =>{
     
     <div>
     
-        <RequestsList />
+        <RequestsList url = {`/api/admin/get-requests-list`}/>
     
     </div>
     

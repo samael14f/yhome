@@ -19,10 +19,7 @@ const MenuItems = () =>{
         name : 'Users',
         link : '/admin/users',
       },
-      {
-        name : 'Staffs',
-        link : '/admin/staffs',
-      },
+
       {
         name: 'Properties',
         link: '/admin/properties',
@@ -32,15 +29,9 @@ const MenuItems = () =>{
         link: '/admin/requests',
       },
       {
-        name: 'Complaints',
-        link: '/admin/complaints'
-      },
-      {
         name: 'Reservations',
         link: '/admin/reservations',
       },
-      
-      
       ]
       
     
@@ -65,5 +56,3 @@ const MenuItems = () =>{
 }
 
 export default MenuItems;
-
-

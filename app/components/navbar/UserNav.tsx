@@ -76,7 +76,7 @@ const UserNav: React.FC<UserNavProps> = ({
                                 }}
                             />
 
-                       <MenuLink
+                   <MenuLink
                           label='My profile'
                        onClick={() => {
                                setIsOpen(false);
@@ -95,16 +95,7 @@ const UserNav: React.FC<UserNavProps> = ({
                          />:<></>
                          }
                          
-                       { !isSuperUser && isStaff?
-                      
-                        <MenuLink 
-                          label='Dashboard 🔷'
-                          onClick={() =>{
-                            setIsOpen(false);
-                            router.push('/staff');
-                          }}
-                         />:<></>
-                         }
+
                     
                         <LogoutButton />
                         
@@ -136,3 +127,27 @@ const UserNav: React.FC<UserNavProps> = ({
 }
 
 export default UserNav;
+
+
+
+/*                        <MenuLink
+                          label='My profile'
+                       onClick={() => {
+                               setIsOpen(false);
+                    router.push('/myprofile');
+                                }}
+                            />
+                            
+                            
+                                                   { !isSuperUser && isStaff?
+                      
+                        <MenuLink 
+                          label='Dashboard 🔷'
+                          onClick={() =>{
+                            setIsOpen(false);
+                            router.push('/staff');
+                          }}
+                         />:<></>
+                         }
+                            
+                            */

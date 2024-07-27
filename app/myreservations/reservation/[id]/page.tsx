@@ -4,6 +4,9 @@ import Image from 'next/image'
 import Link from 'next/link'
 import PostReview from '@/app/components/reservation/PostReview'
 import Reviews from '@/app/components/reservation/Reviews'
+import Payment from '@/app/components/reservation/Payment'
+
+
 const Reservation = async ({params}:{params:{id: string}}) =>{
   
   const reservation = await apiService.get(`/api/properties/reservation/${params.id}`)
@@ -63,8 +66,24 @@ return (
                    </div>
                 </div>
 
-                  <div>
-                    payment
+                  <div className="flex flex-col space-y-6 my-auto shadow-lg p-6 py-8 col-span-2 w-full">
+                  <h1 className="text-3xl font-bold text-gray-800 ">Payment Status</h1>
+                    <p className="text-xl text-gray-600 font-semibold">from : {reservation.start_date}</p>
+                    <p className="text-xl text-gray-600 font-semibold">to : {reservation.end_date}</p>
+                    <p className="text-xl text-gray-600 font-semibold">Nights : {reservation.number_of_nights}</p>
+                    <p className="text-2xl text-gray-800 font-semibold">Total : ${reservation.total_price} </p>
+                    {
+                      reservation.paid_status ? (
+                      <div className="text-2xl font-bold text-green-500 border border-2 border-green-400 text-center p-4 rounded-full my-4 w-full aspect-1">
+                        Paid
+                      </div>
+                      ):
+                      (
+                      <Payment 
+                      id = {reservation.id}
+                      amount = {reservation.total_price} />
+                      )
+                    }
                   </div>
             </div>
         </main>

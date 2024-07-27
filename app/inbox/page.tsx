@@ -6,6 +6,7 @@ import Conversation from "../components/inbox/Conversation";
 export type UserType = {
     id: string;
     name: string;
+    email: string;
     avatar_url: string;
 }
 

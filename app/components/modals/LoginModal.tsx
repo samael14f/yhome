@@ -5,13 +5,15 @@ import Modal from "./Modal";
 import { useState } from "react";
 import { useRouter } from 'next/navigation';
 import useLoginModal from "@/app/hooks/useLoginModal";
+import useForgotPasswordModal from "@/app/hooks/useForgotPassword"
 import CustomButton from "../forms/CustomButton";
 import { handleLogin } from "@/app/lib/actions";
 import apiService from "@/app/services/apiService";
 
 const LoginModal = () => {
-    const router = useRouter()
-    const loginModal = useLoginModal()
+    const router = useRouter();
+    const forgotPassword = useForgotPasswordModal();
+    const loginModal = useLoginModal();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [errors, setErrors] = useState<string[]>([]);
@@ -44,7 +46,14 @@ const LoginModal = () => {
                 <input onChange={(e) => setEmail(e.target.value)} placeholder="Your e-mail address" type="email" className="w-full h-[54px] px-4 border border-gray-300 rounded-xl" />
 
                 <input onChange={(e) => setPassword(e.target.value)} placeholder="Your password" type="password" className="w-full h-[54px] px-4 border border-gray-300 rounded-xl" />
-            
+                
+          <p className="text-airbnb font-bold" onClick={()=>{
+                  loginModal.close()
+                  forgotPassword.open()
+                }
+                }
+                >forgot the password</p>
+                
                 {errors.map((error, index) => {
                     return (
                         <div 
@@ -75,3 +84,12 @@ const LoginModal = () => {
 }
 
 export default LoginModal;
+
+
+/*                   <p className="text-airbnb font-bold" onClick={()=>{
+                  loginModal.close()
+                  forgotPassword.open()
+                }
+                }
+                >forgot the password</p>
+                */
